@@ -8,14 +8,18 @@
       <th>Id</th>
       <th>Name</th>
       <th>Price</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let product of products">
+    @for(product of products; track product.id){
+    <tr>
       <td>{{ product.id }}</td>
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>
+      <td><button (click)="onDeleteClick(product.id)">Delete</button></td>
     </tr>
+    }
   </tbody>
 </table>
