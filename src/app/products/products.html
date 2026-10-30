@@ -3,6 +3,14 @@
 <button (click)="getProduct(2)">Get product</button>
 
 <p>Total Products: {{ products.length }}</p>
+@if(selectedProduct){
+  <div>
+    <h1>You have selected: {{selectedProduct.name}}</h1>
+    <form>
+
+    </form>
+  </div>
+}
 
 <table>
   <thead>
