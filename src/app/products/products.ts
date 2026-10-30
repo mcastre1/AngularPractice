@@ -37,7 +37,7 @@ export class ProductsComponent {
     console.log(id);
   }
 
-  public selectProduct(product:object){
-    console.log(product);
+  public selectProduct(product:Product){
+    this.selectedProduct = product
   }
 }
