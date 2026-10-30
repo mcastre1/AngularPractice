@@ -21,6 +21,15 @@ export class ProductsComponent {
       .subscribe(data => {
         this.products = data;
       });
+
+    this.getProduct(2);
+  }
+
+  public getProduct(id:number){
+    this.productService.getProduct(id)
+    .subscribe(data => {
+      console.log(data);
+    })
   }
 
   public onDeleteClick(id:number) {

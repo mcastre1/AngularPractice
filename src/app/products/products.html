@@ -1,5 +1,7 @@
 <h2>Products</h2>
 
+<button (click)="getProduct(2)">Get product</button>
+
 <p>Total Products: {{ products.length }}</p>
 
 <table>
@@ -13,13 +15,11 @@
   </thead>
 
   <tbody>
-    @for(product of products; track product.id){
-    <tr>
+    <tr *ngFor="let product of products">
       <td>{{ product.id }}</td>
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>
-      <td><button (click)="onDeleteClick(product.id)">Delete</button></td>
+      <td><button (click) = "onDeleteClick(product.id)">Delete</button></td>
     </tr>
-    }
   </tbody>
 </table>
