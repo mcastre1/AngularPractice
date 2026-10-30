@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-products',    // This is the custom html element/block everything in this component will live.
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -39,5 +40,9 @@ export class ProductsComponent {
 
   public selectProduct(product:Product){
     this.selectedProduct = product
+  }
+
+  public saveProduct(){
+    console.log(`Saving product ${this.selectedProduct?.id}`)
   }
 }
