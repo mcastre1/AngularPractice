@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class ProductsComponent {
 
   products: Product[] = [];
+  selectedProduct: Product | null = null;
 
   constructor(private productService: ProductService) { }
 
@@ -34,5 +35,9 @@ export class ProductsComponent {
 
   public onDeleteClick(id:number) {
     console.log(id);
+  }
+
+  public selectProduct(product:object){
+    console.log(product);
   }
 }
