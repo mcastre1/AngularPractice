@@ -6,7 +6,7 @@
 @if(selectedProduct){
   <div>
     <h1>You have selected: {{selectedProduct.name}}</h1>
-    <form>
+    <form (ngSubmit)="saveProduct()">
       <div>
         <label>Name</label>
         <input type="text" [(ngModel)]="selectedProduct.name" name="name">
@@ -15,6 +15,9 @@
         <label>Price</label>
         <input type="number" [(ngModel)]="selectedProduct.price" name="price">
       </div>
+      <button type="submit">
+        Save
+      </button>
     </form>
   </div>
 }

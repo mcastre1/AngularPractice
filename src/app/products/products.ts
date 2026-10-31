@@ -39,7 +39,7 @@ export class ProductsComponent {
   }
 
   public selectProduct(product:Product){
-    this.selectedProduct = product
+    this.selectedProduct = {...product};
   }
 
   public saveProduct(){
