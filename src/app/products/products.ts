@@ -45,6 +45,14 @@ export class ProductsComponent {
   }
 
   public saveProduct() {
-    console.log(`Saving product ${this.selectedProduct?.id}`)
+    if (!this.selectedProduct) return;
+
+    console.log(`Saving product ${this.selectedProduct?.id}`);
+    this.productService.updateProduct(this.selectedProduct)
+    .subscribe({
+      next: ()=> {
+        this.loadProducts();
+      }
+    });
   }
 }

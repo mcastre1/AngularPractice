@@ -19,7 +19,7 @@ export class ProductService {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
 
-  updateProduct(product: Product){
-    this.http.put(`${this.apiUrl}/${product.id}`, product);
+  updateProduct(product: Product) : Observable<any>{
+    return this.http.put(`${this.apiUrl}/${product.id}`, product);
   }
 }
