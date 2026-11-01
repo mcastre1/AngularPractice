@@ -19,30 +19,32 @@ export class ProductsComponent {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.loadProducts();
+  }
+
+  public loadProducts() {
     this.productService.getProducts()
       .subscribe(data => {
         this.products = data;
       });
-
-    this.getProduct(2);
   }
 
-  public getProduct(id:number){
+  public getProduct(id: number) {
     this.productService.getProduct(id)
-    .subscribe(data => {
-      console.log(data);
-    })
+      .subscribe(data => {
+        console.log(data);
+      })
   }
 
-  public onDeleteClick(id:number) {
+  public onDeleteClick(id: number) {
     console.log(id);
   }
 
-  public selectProduct(product:Product){
-    this.selectedProduct = {...product};
+  public selectProduct(product: Product) {
+    this.selectedProduct = { ...product };
   }
 
-  public saveProduct(){
+  public saveProduct() {
     console.log(`Saving product ${this.selectedProduct?.id}`)
   }
 }
