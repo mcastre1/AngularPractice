@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-products',    // This is the custom html element/block everything in this component will live.
@@ -37,7 +38,6 @@ export class ProductsComponent {
   }
 
   public onDeleteClick(id: number) {
-    console.log(id);
   }
 
   public selectProduct(product: Product) {
