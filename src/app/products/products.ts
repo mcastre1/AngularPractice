@@ -17,6 +17,7 @@ export class ProductsComponent {
   products: Product[] = [];
   selectedProduct: Product | null = null;
   showCreate : boolean = true;
+  newProduct: Product = {id:0, name:"", price:0};
 
   constructor(private productService: ProductService) { }
 

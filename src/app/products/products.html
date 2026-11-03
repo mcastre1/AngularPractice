@@ -3,7 +3,14 @@
 @if(showCreate){
   <h1>Create Product</h1>
   <form>
-    
+    <div>
+      <label>Name</label>
+      <input type="text" [(ngModel)]="newProduct.name" name="newProductName">
+    </div>
+    <div>
+      <label>Price</label>
+      <input type="number" [(ngModel)]="newProduct.price" name="newProductPrice">
+    </div>
   </form>
 }
 
