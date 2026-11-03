@@ -29,6 +29,10 @@ export class ProductsComponent {
     this.showCreate = !this.showCreate;
   }
 
+  public createProduct(){
+    console.log("creating product");
+  }
+
   public loadProducts() {
     this.productService.getProducts()
       .subscribe(data => {
