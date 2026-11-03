@@ -16,13 +16,17 @@ export class ProductsComponent {
 
   products: Product[] = [];
   selectedProduct: Product | null = null;
-  showCreate : boolean = true;
+  showCreate : boolean = false;
   newProduct: Product = {id:0, name:"", price:0};
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.loadProducts();
+  }
+
+  public showCreateProduct() {
+    this.showCreate = !this.showCreate;
   }
 
   public loadProducts() {
