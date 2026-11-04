@@ -23,7 +23,7 @@ export class ProductService {
     return this.http.put(`${this.apiUrl}/${product.id}`, product);
   }
 
-  createProduct(product: ProductDTO) : Observable<any>{
+  postProduct(product: ProductDTO) : Observable<any>{
     return this.http.post(`${this.apiUrl}`, product);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Product } from '../models/product';
+import { Product, ProductDTO } from '../models/product';
 import { ProductService } from '../services/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +17,7 @@ export class ProductsComponent {
   products: Product[] = [];
   selectedProduct: Product | null = null;
   showCreate : boolean = false;
-  newProduct: Product = {id:0, name:"", price:0};
+  newProduct: ProductDTO = {name:"", price:0};
 
   constructor(private productService: ProductService) { }
 
@@ -30,7 +30,10 @@ export class ProductsComponent {
   }
 
   public createProduct(){
-    console.log("creating product");
+    this.productService.postProduct(this.newProduct)
+    .subscribe(data => {
+      console.log(data);
+    })
   }
 
   public loadProducts() {
