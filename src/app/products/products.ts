@@ -31,8 +31,12 @@ export class ProductsComponent {
 
   public createProduct(){
     this.productService.postProduct(this.newProduct)
-    .subscribe(data => {
-      console.log(data);
+    .subscribe({
+      next: () => {
+        this.showCreate = false;
+        this.newProduct = {name: '', price: 0};
+        this.loadProducts();
+      }
     })
   }
 
