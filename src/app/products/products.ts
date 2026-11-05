@@ -55,6 +55,12 @@ export class ProductsComponent {
   }
 
   public onDeleteClick(id: number) {
+    this.productService.deleteProdcut(id)
+    .subscribe({
+      next:() => {
+        console.log("Deleted product with id " + id);
+      }
+    });
   }
 
   public selectProduct(product: Product) {
