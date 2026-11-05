@@ -59,6 +59,7 @@ export class ProductsComponent {
     .subscribe({
       next:() => {
         console.log("Deleted product with id " + id);
+        this.loadProducts();
       }
     });
   }
