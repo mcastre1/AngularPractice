@@ -3,7 +3,6 @@ import { Product, ProductDTO } from '../models/product';
 import { ProductService } from '../services/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-products',    // This is the custom html element/block everything in this component will live.
@@ -76,6 +75,7 @@ export class ProductsComponent {
     .subscribe({
       next: ()=> {
         this.loadProducts();
+        this.selectedProduct = null;
       }
     });
   }
