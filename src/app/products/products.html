@@ -11,12 +11,12 @@
       <label>Price</label>
       <input type="number" [(ngModel)]="newProduct.price" name="newProductPrice">
     </div>
-    <button type="submit" (click)="createProduct()">Create</button>
+    <button type="submit" mat-raised-button (click)="createProduct()">Create</button>
   </form>
 }
 
-<button (click)="getProduct(2)">Get product</button>
-<button (click)="showCreateProduct()">@if(showCreate){Close}@else{Create Product}</button>
+<button mat-stroked-button (click)="getProduct(2)">Get product</button>
+<button mat-stroked-button (click)="showCreateProduct()">@if(showCreate){Close}@else{Create Product}</button>
 
 <p>Total Products: {{ products.length }}</p>
 @if(selectedProduct){

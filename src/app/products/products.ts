@@ -3,11 +3,12 @@ import { Product, ProductDTO } from '../models/product';
 import { ProductService } from '../services/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-products',    // This is the custom html element/block everything in this component will live.
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatButtonModule],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
