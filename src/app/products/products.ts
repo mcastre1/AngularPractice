@@ -4,11 +4,12 @@ import { ProductService } from '../services/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-products',    // This is the custom html element/block everything in this component will live.
   standalone: true,
-  imports: [CommonModule, FormsModule, MatButtonModule],
+  imports: [CommonModule, FormsModule, MatButtonModule, MatTableModule],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -18,6 +19,7 @@ export class ProductsComponent {
   selectedProduct: Product | null = null;
   showCreate : boolean = false;
   newProduct: ProductDTO = {name:"", price:0};
+  displayedColumns = ["id", "name"];
 
   constructor(private productService: ProductService) { }
 
