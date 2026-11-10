@@ -19,7 +19,7 @@ export class ProductsComponent {
   selectedProduct: Product | null = null;
   showCreate : boolean = false;
   newProduct: ProductDTO = {name:"", price:0};
-  displayedColumns = ["id", "name", "price"];
+  displayedColumns = ["id", "name", "price", "actions"];
 
   constructor(private productService: ProductService) { }
 
