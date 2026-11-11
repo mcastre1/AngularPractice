@@ -1,5 +1,3 @@
-<h2>Products</h2>
-
 @if(showCreate){
 <h1>Create Product</h1>
 <form>
@@ -16,6 +14,7 @@
 }
 
 <div class="toolbar">
+  <h2>Products</h2>
   <button mat-stroked-button (click)="showCreateProduct()">@if(showCreate){Close}@else{Create Product}</button>
 </div>
 
