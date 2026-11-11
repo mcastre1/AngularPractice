@@ -15,8 +15,9 @@
 </form>
 }
 
-<button mat-stroked-button (click)="getProduct(2)">Get product</button>
-<button mat-stroked-button (click)="showCreateProduct()">@if(showCreate){Close}@else{Create Product}</button>
+<div class="toolbar">
+  <button mat-stroked-button (click)="showCreateProduct()">@if(showCreate){Close}@else{Create Product}</button>
+</div>
 
 <p>Total Products: {{ products.length }}</p>
 @if(selectedProduct){
