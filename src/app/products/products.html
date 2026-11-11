@@ -15,7 +15,15 @@
 
 <div class="toolbar">
   <h2>Products</h2>
-  <button mat-stroked-button (click)="showCreateProduct()">@if(showCreate){Close}@else{Create Product}</button>
+  <button matFab (click)="showCreateProduct()">
+    @if(showCreate){
+      <mat-icon>close</mat-icon>
+    }
+    @else{
+      <mat-icon>add</mat-icon>
+    }
+    
+  </button>
 </div>
 
 <p>Total Products: {{ products.length }}</p>
