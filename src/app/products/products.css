@@ -15,4 +15,22 @@
 
 .custom-fab {
   border-radius: 999px !important;
+
+}
+
+.add-button {
+  background-color: #19d266;
+  color: white;
+
+  transition: background-color 0.2s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.add-button:hover {
+  background-color: #0ca34b;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 12px rgba(0,0,0,0.15);
 }
